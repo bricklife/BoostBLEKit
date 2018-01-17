@@ -1,0 +1,53 @@
+branches:
+  only:
+    - master
+
+matrix:
+  include:
+    - script:
+        - set -o pipefail
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package | xcpretty
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package -sdk iphonesimulator -destination "name=iPhone SE" | xcpretty
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
+        - xcodebuild build -scheme BoostBLEKit-Package -sdk watchsimulator | xcpretty
+        - pod lib lint
+      env:
+        - JOB=Xcode
+        - XCODE_ACTION="build-for-testing test-without-building"
+      os: osx
+      osx_image: xcode9
+      language: objective-c
+    - script:
+        - swift --version
+        - swift build
+        - swift test
+      env: JOB=SPM
+      os: osx
+      osx_image: xcode9
+      language: objective-c
+    - script:
+        - swift --version
+        - swift build
+        - swift test
+      env:
+        - JOB=Linux
+      sudo: required
+      dist: trusty
+      language: generic
+      install:
+        - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+    - script:
+        - swift --version
+        - swift build
+        - swift test
+      env:
+        - JOB=Linux
+        - SWIFT_VERSION=4.0-DEVELOPMENT-SNAPSHOT-2017-09-26-a
+      sudo: required
+      dist: trusty
+      language: generic
+      install:
+        - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+
+notifications:
+  email: false
