@@ -11,6 +11,20 @@ import Foundation
 public struct Motor {
     
     public let port: Port
+    public let deviceType: DeviceType
+    
+    public init?(port: Port, deviceType: DeviceType) {
+        switch (port, deviceType) {
+        case (.A, .builtInMotor),
+             (.B, .builtInMotor),
+             (.C, .interactiveMotor),
+             (.D, .interactiveMotor):
+            self.port = port
+            self.deviceType = deviceType
+        default:
+            return nil
+        }
+    }
     
     public func powerCommand(power: Int8) -> MotorPowerCommand {
         return MotorPowerCommand(port: port, power: power)
