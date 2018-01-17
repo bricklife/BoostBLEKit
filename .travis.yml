@@ -6,10 +6,10 @@ matrix:
   include:
     - script:
         - set -o pipefail
-        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package | xcpretty
-        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package -sdk iphonesimulator -destination "name=iPhone SE" | xcpretty
-        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit-Package -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
-        - xcodebuild build -scheme BoostBLEKit-Package -sdk watchsimulator | xcpretty
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit | xcpretty
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit -sdk iphonesimulator -destination "name=iPhone SE" | xcpretty
+        - xcodebuild $XCODE_ACTION -scheme BoostBLEKit -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
+        - xcodebuild build -scheme BoostBLEKit -sdk watchsimulator | xcpretty
         - pod lib lint
       env:
         - JOB=Xcode
