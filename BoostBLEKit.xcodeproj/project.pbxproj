@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"BoostBLEKit::BoostBLEKitPackageTests::ProductTarget" /* BoostBLEKitPackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_39 /* Build configuration list for PBXAggregateTarget "BoostBLEKitPackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_42 /* PBXTargetDependency */,
-			);
-			name = BoostBLEKitPackageTests;
-			productName = BoostBLEKitPackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		CB434599200FA72100D82D7D /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB434598200FA72100D82D7D /* Command.swift */; };
 		CB43459B200FA7C400D82D7D /* MotorPowerCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */; };
@@ -28,7 +14,6 @@
 		CB4345A2200FA8E800D82D7D /* Motor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A1200FA8E800D82D7D /* Motor.swift */; };
 		CB4345A4200FA90700D82D7D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A3200FA90700D82D7D /* Notification.swift */; };
 		CB4345A6200FAB8300D82D7D /* GATT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A5200FAB8300D82D7D /* GATT.swift */; };
-		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_27 /* BoostBLEKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* BoostBLEKitTests.swift */; };
 		OBJ_29 /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BoostBLEKit::BoostBLEKit::Product" /* BoostBLEKit.framework */; };
 /* End PBXBuildFile section */
@@ -40,13 +25,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = "BoostBLEKit::BoostBLEKit";
 			remoteInfo = BoostBLEKit;
-		};
-		CB434597200FA6D500D82D7D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "BoostBLEKit::BoostBLEKitTests";
-			remoteInfo = BoostBLEKitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,7 +39,6 @@
 		CB4345A3200FA90700D82D7D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CB4345A5200FAB8300D82D7D /* GATT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATT.swift; sourceTree = "<group>"; };
 		OBJ_12 /* BoostBLEKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostBLEKitTests.swift; sourceTree = "<group>"; };
-		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +86,13 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_13 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -179,20 +154,6 @@
 			productReference = "BoostBLEKit::BoostBLEKitTests::Product" /* BoostBLEKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		"BoostBLEKit::SwiftPMPackageDescription" /* BoostBLEKitPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "BoostBLEKitPackageDescription" */;
-			buildPhases = (
-				OBJ_20 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BoostBLEKitPackageDescription;
-			productName = BoostBLEKitPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,28 +170,18 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"BoostBLEKit::SwiftPMPackageDescription" /* BoostBLEKitPackageDescription */,
 				"BoostBLEKit::BoostBLEKitTests" /* BoostBLEKitTests */,
 				"BoostBLEKit::BoostBLEKit" /* BoostBLEKit */,
-				"BoostBLEKit::BoostBLEKitPackageTests::ProductTarget" /* BoostBLEKitPackageTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_20 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_21 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -261,32 +212,9 @@
 			target = "BoostBLEKit::BoostBLEKit" /* BoostBLEKit */;
 			targetProxy = CB434596200FA6D400D82D7D /* PBXContainerItemProxy */;
 		};
-		OBJ_42 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "BoostBLEKit::BoostBLEKitTests" /* BoostBLEKitTests */;
-			targetProxy = CB434597200FA6D500D82D7D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_18 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 		OBJ_24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -415,30 +343,9 @@
 			};
 			name = Release;
 		};
-		OBJ_40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_17 /* Build configuration list for PBXNativeTarget "BoostBLEKitPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_18 /* Debug */,
-				OBJ_19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		OBJ_2 /* Build configuration list for PBXProject "BoostBLEKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -462,15 +369,6 @@
 			buildConfigurations = (
 				OBJ_33 /* Debug */,
 				OBJ_34 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		OBJ_39 /* Build configuration list for PBXAggregateTarget "BoostBLEKitPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_40 /* Debug */,
-				OBJ_41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
