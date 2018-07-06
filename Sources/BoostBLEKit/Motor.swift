@@ -15,10 +15,10 @@ public struct Motor {
     
     public init?(port: Port, deviceType: DeviceType) {
         switch (port, deviceType) {
-        case (.A, .builtInMotor),
-             (.B, .builtInMotor),
-             (.C, .interactiveMotor),
-             (.D, .interactiveMotor):
+        case (.A, .builtInMotor), (.B, .builtInMotor),
+             (_, .interactiveMotor),
+             (_, .mediumMotor),
+             (_, .trainMotor):
             self.port = port
             self.deviceType = deviceType
         default:
@@ -27,6 +27,6 @@ public struct Motor {
     }
     
     public func powerCommand(power: Int8) -> MotorPowerCommand {
-        return MotorPowerCommand(port: port, power: power)
+        return MotorPowerCommand(port: port, deviceType: deviceType, power: power)
     }
 }
