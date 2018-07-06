@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Motor {
+public struct Motor: Device {
     
     public let port: Port
     public let deviceType: DeviceType

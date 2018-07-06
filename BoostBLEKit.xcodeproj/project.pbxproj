@@ -14,6 +14,9 @@
 		CB4345A2200FA8E800D82D7D /* Motor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A1200FA8E800D82D7D /* Motor.swift */; };
 		CB4345A4200FA90700D82D7D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A3200FA90700D82D7D /* Notification.swift */; };
 		CB4345A6200FAB8300D82D7D /* GATT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A5200FAB8300D82D7D /* GATT.swift */; };
+		CB7CEAD220EFA5AD001291D7 /* RGBLightColorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */; };
+		CB7CEAD420EFA7C3001291D7 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7CEAD320EFA7C3001291D7 /* Device.swift */; };
+		CB7CEAD620EFA820001291D7 /* RGBLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7CEAD520EFA820001291D7 /* RGBLight.swift */; };
 		OBJ_27 /* BoostBLEKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* BoostBLEKitTests.swift */; };
 		OBJ_29 /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BoostBLEKit::BoostBLEKit::Product" /* BoostBLEKit.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,9 @@
 		CB4345A1200FA8E800D82D7D /* Motor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motor.swift; sourceTree = "<group>"; };
 		CB4345A3200FA90700D82D7D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CB4345A5200FAB8300D82D7D /* GATT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATT.swift; sourceTree = "<group>"; };
+		CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLightColorCommand.swift; sourceTree = "<group>"; };
+		CB7CEAD320EFA7C3001291D7 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		CB7CEAD520EFA820001291D7 /* RGBLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLight.swift; sourceTree = "<group>"; };
 		OBJ_12 /* BoostBLEKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostBLEKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,12 +113,15 @@
 			isa = PBXGroup;
 			children = (
 				CB434598200FA72100D82D7D /* Command.swift */,
+				CB7CEAD320EFA7C3001291D7 /* Device.swift */,
 				CB43459F200FA8B000D82D7D /* DeviceType.swift */,
 				CB4345A5200FAB8300D82D7D /* GATT.swift */,
 				CB4345A1200FA8E800D82D7D /* Motor.swift */,
 				CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */,
 				CB4345A3200FA90700D82D7D /* Notification.swift */,
 				CB43459C200FA80100D82D7D /* Port.swift */,
+				CB7CEAD520EFA820001291D7 /* RGBLight.swift */,
+				CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */,
 			);
 			name = BoostBLEKit;
 			path = Sources/BoostBLEKit;
@@ -196,6 +205,9 @@
 			files = (
 				CB4345A6200FAB8300D82D7D /* GATT.swift in Sources */,
 				CB43459D200FA80100D82D7D /* Port.swift in Sources */,
+				CB7CEAD620EFA820001291D7 /* RGBLight.swift in Sources */,
+				CB7CEAD220EFA5AD001291D7 /* RGBLightColorCommand.swift in Sources */,
+				CB7CEAD420EFA7C3001291D7 /* Device.swift in Sources */,
 				CB4345A0200FA8B000D82D7D /* DeviceType.swift in Sources */,
 				CB4345A4200FA90700D82D7D /* Notification.swift in Sources */,
 				CB4345A2200FA8E800D82D7D /* Motor.swift in Sources */,
