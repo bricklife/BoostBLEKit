@@ -14,7 +14,7 @@ public enum DeviceType: UInt8 {
     case trainMotor             = 0x02
     case voltageSensor          = 0x14
     case currentSensor          = 0x15
-    case piezo                  = 0x16
+    case piezoSpeaker           = 0x16
     case rgbLight               = 0x17
     case tiltSensor             = 0x22
     case motionSensor           = 0x23
@@ -36,8 +36,8 @@ extension DeviceType: CustomStringConvertible {
             return "Voltage Sensor"
         case .currentSensor:
             return "Current Sensor"
-        case .piezo:
-            return "Piezo"
+        case .piezoSpeaker:
+            return "Piezo Speaker"
         case .rgbLight:
             return "RGB Light"
         case .tiltSensor:
