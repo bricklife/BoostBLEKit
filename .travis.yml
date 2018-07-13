@@ -10,7 +10,6 @@ matrix:
         - xcodebuild $XCODE_ACTION -scheme BoostBLEKit -sdk iphonesimulator -destination "name=iPhone SE" | xcpretty
         - xcodebuild $XCODE_ACTION -scheme BoostBLEKit -sdk appletvsimulator -destination "name=Apple TV 1080p" | xcpretty
         - xcodebuild build -scheme BoostBLEKit -sdk watchsimulator | xcpretty
-        - pod lib lint
       env:
         - JOB=Xcode
         - XCODE_ACTION="build-for-testing test-without-building"
