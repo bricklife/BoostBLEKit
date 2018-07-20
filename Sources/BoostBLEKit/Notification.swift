@@ -10,7 +10,7 @@ import Foundation
 
 public enum Notification {
     
-    case connected(PortId, DeviceType)
+    case connected(PortId, IOType)
     case disconnected(PortId)
 }
 
@@ -29,8 +29,8 @@ extension Notification {
                 self = .disconnected(portId)
             case 0x01, 0x02:
                 guard data.count >= 6 else { return nil }
-                guard let deviceType = DeviceType(rawValue: data[5]) else { return nil }
-                self = .connected(portId, deviceType)
+                guard let ioType = IOType(rawValue: data[5]) else { return nil }
+                self = .connected(portId, ioType)
             default:
                 return nil
             }
@@ -45,8 +45,8 @@ extension Notification: CustomStringConvertible {
     
     public var description: String {
         switch self {
-        case .connected(let portId, let deviceType):
-            return "Connected \(deviceType) into \(portId)"
+        case .connected(let portId, let ioType):
+            return "Connected \(ioType) into \(portId)"
         case .disconnected(let portId):
             return "Disconnected a device from \(portId)"
         }

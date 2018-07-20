@@ -14,7 +14,7 @@ public final class Boost {
         
         public init() {}
         
-        public var connectedDevices: [PortId : DeviceType] = [
+        public var connectedIOs: [PortId : IOType] = [
             0x32: .rgbLight,
             0x37: .builtInMotor,
             0x38: .builtInMotor,
@@ -32,11 +32,11 @@ public final class Boost {
             .AB:    0x39,
             ]
         
-        public func powerCommand(port: Port, power: Int8) -> Command? {
+        public func motorPowerCommand(port: Port, power: Int8) -> Command? {
             guard let portId = portId(for: port) else { return nil }
-            guard let deviceType = connectedDevices[portId] else { return nil }
+            guard let ioType = connectedIOs[portId] else { return nil }
             
-            switch deviceType {
+            switch ioType {
             case .interactiveMotor, .builtInMotor:
                 return InteractiveMotorPowerCommand(portId: portId, power: power)
             case .mediumMotor, .trainMotor:

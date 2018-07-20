@@ -14,7 +14,7 @@ public final class PoweredUp {
         
         public init() {}
         
-        public var connectedDevices: [PortId : DeviceType] = [
+        public var connectedIOs: [PortId : IOType] = [
             0x32: .rgbLight,
             0x3b: .currentSensor,
             0x3c: .voltageSensor,
@@ -26,11 +26,11 @@ public final class PoweredUp {
             .AB:    0x39,
             ]
         
-        public func powerCommand(port: Port, power: Int8) -> Command? {
+        public func motorPowerCommand(port: Port, power: Int8) -> Command? {
             guard let portId = portId(for: port) else { return nil }
-            guard let deviceType = connectedDevices[portId] else { return nil }
+            guard let ioType = connectedIOs[portId] else { return nil }
             
-            switch deviceType {
+            switch ioType {
             case .mediumMotor, .trainMotor:
                 return MotorPowerCommand(portId: portId, power: power)
             default:

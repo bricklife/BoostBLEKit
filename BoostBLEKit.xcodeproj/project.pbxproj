@@ -12,7 +12,7 @@
 		CB434599200FA72100D82D7D /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB434598200FA72100D82D7D /* Command.swift */; };
 		CB43459B200FA7C400D82D7D /* MotorPowerCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */; };
 		CB43459D200FA80100D82D7D /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43459C200FA80100D82D7D /* Port.swift */; };
-		CB4345A0200FA8B000D82D7D /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43459F200FA8B000D82D7D /* DeviceType.swift */; };
+		CB4345A0200FA8B000D82D7D /* IOType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB43459F200FA8B000D82D7D /* IOType.swift */; };
 		CB4345A4200FA90700D82D7D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A3200FA90700D82D7D /* Notification.swift */; };
 		CB4345A6200FAB8300D82D7D /* GATT.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4345A5200FAB8300D82D7D /* GATT.swift */; };
 		CB4BF0FE21022EED00636F42 /* PoweredUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BF0FD21022EED00636F42 /* PoweredUp.swift */; };
@@ -40,7 +40,7 @@
 		CB434598200FA72100D82D7D /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorPowerCommand.swift; sourceTree = "<group>"; };
 		CB43459C200FA80100D82D7D /* Port.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
-		CB43459F200FA8B000D82D7D /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		CB43459F200FA8B000D82D7D /* IOType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOType.swift; sourceTree = "<group>"; };
 		CB4345A3200FA90700D82D7D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		CB4345A5200FAB8300D82D7D /* GATT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GATT.swift; sourceTree = "<group>"; };
 		CB4BF0FD21022EED00636F42 /* PoweredUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoweredUp.swift; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				CB0B5ADD2102372F008DEC1B /* Command */,
-				CB43459F200FA8B000D82D7D /* DeviceType.swift */,
 				CB4345A5200FAB8300D82D7D /* GATT.swift */,
 				CB4BF0FF210236BA00636F42 /* Hub */,
+				CB43459F200FA8B000D82D7D /* IOType.swift */,
 				CB4345A3200FA90700D82D7D /* Notification.swift */,
 				CB43459C200FA80100D82D7D /* Port.swift */,
 			);
@@ -228,7 +228,7 @@
 				CB7CEAD220EFA5AD001291D7 /* RGBLightColorCommand.swift in Sources */,
 				CB0B5ADC21023718008DEC1B /* Boost.swift in Sources */,
 				CBED358120F8E85C009DAE91 /* Hub.swift in Sources */,
-				CB4345A0200FA8B000D82D7D /* DeviceType.swift in Sources */,
+				CB4345A0200FA8B000D82D7D /* IOType.swift in Sources */,
 				CB4345A4200FA90700D82D7D /* Notification.swift in Sources */,
 				CB434599200FA72100D82D7D /* Command.swift in Sources */,
 				CB43459B200FA7C400D82D7D /* MotorPowerCommand.swift in Sources */,

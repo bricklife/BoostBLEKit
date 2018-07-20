@@ -10,14 +10,14 @@ import Foundation
 
 public protocol Hub {
     
-    var connectedDevices: [PortId: DeviceType] { get set }
+    var connectedIOs: [PortId: IOType] { get set }
     var portMap: [Port: PortId] { get }
     
     func port(for portId: PortId) -> Port?
     func portId(for port: Port) -> PortId?
     
-    func powerCommand(port: Port, power: Int8) -> Command?
-    func colorCommand(color: RGBLightColorCommand.Color) -> Command?
+    func motorPowerCommand(port: Port, power: Int8) -> Command?
+    func rgbLightColorCommand(color: RGBLightColorCommand.Color) -> Command?
 }
 
 public extension Hub {
@@ -30,8 +30,8 @@ public extension Hub {
         return portMap[port]
     }
     
-    public func colorCommand(color: RGBLightColorCommand.Color) -> Command? {
-        guard let portId = connectedDevices.first(where: { $0.value == .rgbLight })?.key else { return nil }
+    public func rgbLightColorCommand(color: RGBLightColorCommand.Color) -> Command? {
+        guard let portId = connectedIOs.first(where: { $0.value == .rgbLight })?.key else { return nil }
         return RGBLightColorCommand(portId: portId, color: color)
     }
 }
