@@ -18,6 +18,7 @@
 		CB4BF0FE21022EED00636F42 /* PoweredUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BF0FD21022EED00636F42 /* PoweredUp.swift */; };
 		CB7CEAD220EFA5AD001291D7 /* RGBLightColorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */; };
 		CBED358120F8E85C009DAE91 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED357F20F8E55E009DAE91 /* Hub.swift */; };
+		CBF9E0EA21029EE300A0C3E5 /* HubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E0E921029EE300A0C3E5 /* HubType.swift */; };
 		OBJ_27 /* BoostBLEKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* BoostBLEKitTests.swift */; };
 		OBJ_29 /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BoostBLEKit::BoostBLEKit::Product" /* BoostBLEKit.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		CB4BF0FD21022EED00636F42 /* PoweredUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoweredUp.swift; sourceTree = "<group>"; };
 		CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLightColorCommand.swift; sourceTree = "<group>"; };
 		CBED357F20F8E55E009DAE91 /* Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
+		CBF9E0E921029EE300A0C3E5 /* HubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubType.swift; sourceTree = "<group>"; };
 		OBJ_12 /* BoostBLEKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostBLEKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				CB0B5ADD2102372F008DEC1B /* Command */,
 				CB4345A5200FAB8300D82D7D /* GATT.swift */,
 				CB4BF0FF210236BA00636F42 /* Hub */,
+				CBF9E0E921029EE300A0C3E5 /* HubType.swift */,
 				CB43459F200FA8B000D82D7D /* IOType.swift */,
 				CB4345A3200FA90700D82D7D /* Notification.swift */,
 				CB43459C200FA80100D82D7D /* Port.swift */,
@@ -231,6 +234,7 @@
 				CB4345A0200FA8B000D82D7D /* IOType.swift in Sources */,
 				CB4345A4200FA90700D82D7D /* Notification.swift in Sources */,
 				CB434599200FA72100D82D7D /* Command.swift in Sources */,
+				CBF9E0EA21029EE300A0C3E5 /* HubType.swift in Sources */,
 				CB43459B200FA7C400D82D7D /* MotorPowerCommand.swift in Sources */,
 				CB4BF0FE21022EED00636F42 /* PoweredUp.swift in Sources */,
 			);
