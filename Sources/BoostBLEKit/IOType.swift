@@ -1,5 +1,5 @@
 //
-//  DeviceType.swift
+//  IOType.swift
 //  BoostBLEKit
 //
 //  Created by ooba on 17/01/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DeviceType: UInt8 {
+public enum IOType: UInt8 {
     
     case mediumMotor            = 0x01
     case trainMotor             = 0x02
@@ -24,7 +24,7 @@ public enum DeviceType: UInt8 {
     case builtInTiltSensor      = 0x28
 }
 
-extension DeviceType: CustomStringConvertible {
+extension IOType: CustomStringConvertible {
     
     public var description: String {
         switch self {

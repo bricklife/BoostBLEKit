@@ -24,10 +24,10 @@ public struct RGBLightColorCommand: Command {
         case white
     }
     
-    public let port: Port
+    public let portId: PortId
     public let color: Color
     
     public var data: Data {
-        return Data(bytes: [0x08, 0x00, 0x81, port.rawValue, 0x11, 0x51, 0x00, color.rawValue])
+        return Data(bytes: [0x08, 0x00, 0x81, portId, 0x11, 0x51, 0x00, color.rawValue])
     }
 }
