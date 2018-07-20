@@ -4,13 +4,13 @@ import XCTest
 class BoostBLEKitTests: XCTestCase {
     
     func testMotorPowerCommand() {
-        XCTAssertEqual(MotorPowerCommand(port: .A, deviceType: .builtInMotor, power: 100).data,
+        XCTAssertEqual(InteractiveMotorPowerCommand(portId: 0x37, power: 100).data,
                        Data(bytes: [0x09, 0x00, 0x81, 0x37, 0x11, 0x07, 0x64, 0x64, 0x03]))
-        XCTAssertEqual(MotorPowerCommand(port: .B, deviceType: .builtInMotor, power: -100).data,
+        XCTAssertEqual(InteractiveMotorPowerCommand(portId: 0x38, power: -100).data,
                        Data(bytes: [0x09, 0x00, 0x81, 0x38, 0x11, 0x07, 0x9c, 0x64, 0x03]))
-        XCTAssertEqual(MotorPowerCommand(port: .C, deviceType: .builtInMotor, power: 0).data,
+        XCTAssertEqual(InteractiveMotorPowerCommand(portId: 0x01, power: 0).data,
                        Data(bytes: [0x09, 0x00, 0x81, 0x01, 0x11, 0x07, 0x00, 0x64, 0x03]))
-        XCTAssertEqual(MotorPowerCommand(port: .D, deviceType: .builtInMotor, power: 0).data,
+        XCTAssertEqual(InteractiveMotorPowerCommand(portId: 0x02, power: 0).data,
                        Data(bytes: [0x09, 0x00, 0x81, 0x02, 0x11, 0x07, 0x00, 0x64, 0x03]))
     }
     
