@@ -12,6 +12,8 @@ public final class Boost {
     
     public final class MoveHub: Hub {
         
+        public init() {}
+        
         public var connectedDevices: [PortId : DeviceType] = [
             0x32: .rgbLight,
             0x37: .builtInMotor,

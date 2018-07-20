@@ -12,6 +12,8 @@ public final class PoweredUp {
     
     public final class SmartHub: Hub {
         
+        public init() {}
+        
         public var connectedDevices: [PortId : DeviceType] = [
             0x32: .rgbLight,
             0x3b: .currentSensor,
