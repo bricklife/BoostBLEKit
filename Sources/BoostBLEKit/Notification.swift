@@ -48,7 +48,7 @@ extension Notification: CustomStringConvertible {
         case .connected(let portId, let ioType):
             return "Connected \(ioType) into \(portId)"
         case .disconnected(let portId):
-            return "Disconnected a device from \(portId)"
+            return "Disconnected an I/O from \(portId)"
         }
     }
 }
