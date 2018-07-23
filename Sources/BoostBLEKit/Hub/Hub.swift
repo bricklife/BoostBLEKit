@@ -16,6 +16,8 @@ public protocol Hub {
     func port(for portId: PortId) -> Port?
     func portId(for port: Port) -> PortId?
     
+    func canSupportAsMotor(ioType: IOType) -> Bool
+    
     func motorPowerCommand(port: Port, power: Int8) -> Command?
     func rgbLightColorCommand(color: RGBLightColorCommand.Color) -> Command?
 }

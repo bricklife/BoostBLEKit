@@ -32,6 +32,15 @@ public final class Boost {
             .AB:    0x39,
             ]
         
+        public func canSupportAsMotor(ioType: IOType) -> Bool {
+            switch ioType {
+            case .interactiveMotor, .builtInMotor, .mediumMotor, .trainMotor:
+                return true
+            default:
+                return false
+            }
+        }
+        
         public func motorPowerCommand(port: Port, power: Int8) -> Command? {
             guard let portId = portId(for: port) else { return nil }
             guard let ioType = connectedIOs[portId] else { return nil }
