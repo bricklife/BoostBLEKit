@@ -34,7 +34,7 @@ public final class Boost {
         
         public func canSupportAsMotor(ioType: IOType) -> Bool {
             switch ioType {
-            case .interactiveMotor, .builtInMotor, .mediumMotor, .trainMotor:
+            case .interactiveMotor, .builtInMotor, .mediumMotor, .trainMotor, .ledLight:
                 return true
             default:
                 return false
@@ -48,7 +48,7 @@ public final class Boost {
             switch ioType {
             case .interactiveMotor, .builtInMotor:
                 return InteractiveMotorPowerCommand(portId: portId, power: power)
-            case .mediumMotor, .trainMotor:
+            case .mediumMotor, .trainMotor, .ledLight:
                 return MotorPowerCommand(portId: portId, power: power)
             default:
                 return nil

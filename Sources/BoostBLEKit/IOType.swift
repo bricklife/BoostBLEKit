@@ -12,6 +12,7 @@ public enum IOType: UInt8 {
     
     case mediumMotor            = 0x01
     case trainMotor             = 0x02
+    case ledLight               = 0x08
     case voltageSensor          = 0x14
     case currentSensor          = 0x15
     case piezoSpeaker           = 0x16
@@ -32,6 +33,8 @@ extension IOType: CustomStringConvertible {
             return "Medium Motor"
         case .trainMotor:
             return "Train Motor"
+        case .ledLight:
+            return "LED Light"
         case .voltageSensor:
             return "Voltage Sensor"
         case .currentSensor:
