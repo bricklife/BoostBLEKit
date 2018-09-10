@@ -19,7 +19,7 @@ public protocol Hub {
     func canSupportAsMotor(ioType: IOType) -> Bool
     
     func motorPowerCommand(port: Port, power: Int8) -> Command?
-    func rgbLightColorCommand(color: RGBLightColorCommand.Color) -> Command?
+    func rgbLightColorCommand(color: Color) -> Command?
 }
 
 public extension Hub {
@@ -32,7 +32,7 @@ public extension Hub {
         return portMap[port]
     }
     
-    public func rgbLightColorCommand(color: RGBLightColorCommand.Color) -> Command? {
+    public func rgbLightColorCommand(color: Color) -> Command? {
         guard let portId = connectedIOs.first(where: { $0.value == .rgbLight })?.key else { return nil }
         return RGBLightColorCommand(portId: portId, color: color)
     }

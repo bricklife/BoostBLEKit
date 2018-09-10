@@ -10,20 +10,6 @@ import Foundation
 
 public struct RGBLightColorCommand: Command {
     
-    public enum Color: UInt8 {
-        case off = 0x00
-        case pink
-        case purple
-        case blue
-        case lightBlue
-        case lightGreen
-        case green
-        case yellow
-        case orange
-        case red
-        case white
-    }
-    
     public let portId: PortId
     public let color: Color
     
