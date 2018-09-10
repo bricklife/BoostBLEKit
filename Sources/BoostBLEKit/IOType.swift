@@ -25,6 +25,40 @@ public enum IOType: UInt8 {
     case builtInTiltSensor      = 0x28
 }
 
+extension IOType {
+    
+    public var defaultSensorMode: UInt8? {
+        switch self {
+        case .mediumMotor:
+            return nil
+        case .trainMotor:
+            return nil
+        case .ledLight:
+            return nil
+        case .voltageSensor:
+            return nil // return 0
+        case .currentSensor:
+            return nil // return 0
+        case .piezoSpeaker:
+            return nil
+        case .rgbLight:
+            return 0
+        case .tiltSensor:
+            return 1
+        case .motionSensor:
+            return 0
+        case .colorAndDistanceSensor:
+            return 8
+        case .interactiveMotor:
+            return 2
+        case .builtInMotor:
+            return 2
+        case .builtInTiltSensor:
+            return 1
+        }
+    }
+}
+
 extension IOType: CustomStringConvertible {
     
     public var description: String {

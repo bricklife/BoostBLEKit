@@ -19,6 +19,7 @@
 		CB7CEAD220EFA5AD001291D7 /* RGBLightColorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */; };
 		CBED358120F8E85C009DAE91 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED357F20F8E55E009DAE91 /* Hub.swift */; };
 		CBF7D4382146E069000B8B60 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D4372146E069000B8B60 /* Color.swift */; };
+		CBF7D43A2146E8F8000B8B60 /* InputFormatCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7D4392146E8F8000B8B60 /* InputFormatCommand.swift */; };
 		CBF9E0EA21029EE300A0C3E5 /* HubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E0E921029EE300A0C3E5 /* HubType.swift */; };
 		OBJ_27 /* BoostBLEKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* BoostBLEKitTests.swift */; };
 		OBJ_29 /* BoostBLEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "BoostBLEKit::BoostBLEKit::Product" /* BoostBLEKit.framework */; };
@@ -49,6 +50,7 @@
 		CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBLightColorCommand.swift; sourceTree = "<group>"; };
 		CBED357F20F8E55E009DAE91 /* Hub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
 		CBF7D4372146E069000B8B60 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CBF7D4392146E8F8000B8B60 /* InputFormatCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormatCommand.swift; sourceTree = "<group>"; };
 		CBF9E0E921029EE300A0C3E5 /* HubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubType.swift; sourceTree = "<group>"; };
 		OBJ_12 /* BoostBLEKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostBLEKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,8 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				CB434598200FA72100D82D7D /* Command.swift */,
-				CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */,
+				CBF7D4392146E8F8000B8B60 /* InputFormatCommand.swift */,
 				CB0B5ADE21023789008DEC1B /* InteractiveMotorPowerCommand.swift */,
+				CB43459A200FA7C400D82D7D /* MotorPowerCommand.swift */,
 				CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */,
 			);
 			path = Command;
@@ -239,6 +242,7 @@
 				CBF7D4382146E069000B8B60 /* Color.swift in Sources */,
 				CB434599200FA72100D82D7D /* Command.swift in Sources */,
 				CBF9E0EA21029EE300A0C3E5 /* HubType.swift in Sources */,
+				CBF7D43A2146E8F8000B8B60 /* InputFormatCommand.swift in Sources */,
 				CB43459B200FA7C400D82D7D /* MotorPowerCommand.swift in Sources */,
 				CB4BF0FE21022EED00636F42 /* PoweredUp.swift in Sources */,
 			);

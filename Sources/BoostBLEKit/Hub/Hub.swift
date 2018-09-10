@@ -20,6 +20,9 @@ public protocol Hub {
     
     func motorPowerCommand(port: Port, power: Int8) -> Command?
     func rgbLightColorCommand(color: Color) -> Command?
+    
+    func subscribeCommand(portId: PortId) -> Command?
+    func unsubscribeCommand(portId: PortId) -> Command?
 }
 
 public extension Hub {
@@ -35,5 +38,15 @@ public extension Hub {
     public func rgbLightColorCommand(color: Color) -> Command? {
         guard let portId = connectedIOs.first(where: { $0.value == .rgbLight })?.key else { return nil }
         return RGBLightColorCommand(portId: portId, color: color)
+    }
+    
+    public func subscribeCommand(portId: PortId) -> Command? {
+        guard let mode = connectedIOs[portId]?.defaultSensorMode else { return nil }
+        return InputFormatCommand(portId: portId, mode: mode, subscribe: true)
+    }
+    
+    public func unsubscribeCommand(portId: PortId) -> Command? {
+        guard let mode = connectedIOs[portId]?.defaultSensorMode else { return nil }
+        return InputFormatCommand(portId: portId, mode: mode, subscribe: false)
     }
 }

@@ -12,6 +12,7 @@ public enum Notification {
     
     case connected(PortId, IOType)
     case disconnected(PortId)
+    case sensorValue(PortId, Data)
 }
 
 extension Notification {
@@ -20,7 +21,7 @@ extension Notification {
         guard data.count >= 3 else { return nil }
         
         switch data[2] {
-        case 0x04:
+        case 0x04: // Port Information
             guard data.count >= 5 else { return nil }
             let portId = data[3]
             
@@ -34,6 +35,12 @@ extension Notification {
             default:
                 return nil
             }
+            
+        case 0x45: // Sensor Value
+            guard data.count >= 5 else { return nil }
+            let portId = data[3]
+            let value = data.suffix(from: 4)
+            self = .sensorValue(portId, value)
             
         default:
             return nil
@@ -49,6 +56,9 @@ extension Notification: CustomStringConvertible {
             return "Connected \(ioType) into \(portId)"
         case .disconnected(let portId):
             return "Disconnected an I/O from \(portId)"
+        case .sensorValue(let portId, let value):
+            let hex = value.map { String(format: "%02x", $0) }.joined(separator: " ")
+            return "Sensor value \(hex) from \(portId)"
         }
     }
 }
