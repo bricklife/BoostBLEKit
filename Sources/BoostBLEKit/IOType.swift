@@ -42,19 +42,19 @@ extension IOType {
         case .piezoSpeaker:
             return nil
         case .rgbLight:
-            return 0
+            return 0 // Not working on Boost and Powered Up
         case .tiltSensor:
-            return 1
+            return 1 // 0: Tilt (x,y), 1: 2D Orientation, 2: Impact Count?? (3 bytes) 3: Tilt (x,y,z)
         case .motionSensor:
-            return 0
+            return 0 // 0: Distance, 1: Count, 2: ?? (6 bytes)
         case .colorAndDistanceSensor:
-            return 8
+            return 8 // 8: Color, Distance, and Ambient Light Level
         case .interactiveMotor:
-            return 2
+            return 2 // 0: ??, 1: Speed, 2: Position
         case .builtInMotor:
-            return 2
+            return 2 // 0: ??, 1: Speed, 2: Position
         case .builtInTiltSensor:
-            return 1
+            return 2 // 0: Tilt (x,y), 1: 2D Orientation, 2: 3D Orientation, 3: Impact Count, 4: Tilt (x,y,z)
         }
     }
 }

@@ -53,12 +53,19 @@ extension Notification: CustomStringConvertible {
     public var description: String {
         switch self {
         case .connected(let portId, let ioType):
-            return "Connected \(ioType) into \(portId)"
+            return "Connected \(ioType) into Port \(portId.hexString)"
         case .disconnected(let portId):
-            return "Disconnected an I/O from \(portId)"
+            return "Disconnected an I/O from Port \(portId.hexString)"
         case .sensorValue(let portId, let value):
-            let hex = value.map { String(format: "%02x", $0) }.joined(separator: " ")
-            return "Sensor value \(hex) from \(portId)"
+            let hex = value.map { $0.hexString }.joined(separator: " ")
+            return "Sensor value [\(hex)] from Port \(portId.hexString)"
         }
+    }
+}
+
+private extension UInt8 {
+    
+    var hexString: String {
+        return String(format: "%02x", self)
     }
 }
