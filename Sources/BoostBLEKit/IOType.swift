@@ -23,6 +23,10 @@ public enum IOType: UInt8 {
     case interactiveMotor       = 0x26
     case builtInMotor           = 0x27
     case builtInTiltSensor      = 0x28
+    case trainBaseMotor         = 0x29
+    case trainBaseSpeaker       = 0x2a
+    case trainBaseSensor        = 0x2b
+    case trainBaseSpeedometer   = 0x2c
 }
 
 extension IOType {
@@ -55,6 +59,14 @@ extension IOType {
             return 2 // 0: ??, 1: Speed, 2: Position
         case .builtInTiltSensor:
             return 2 // 0: Tilt (x,y), 1: 2D Orientation, 2: 3D Orientation, 3: Impact Count, 4: Tilt (x,y,z)
+        case .trainBaseMotor:
+            return nil
+        case .trainBaseSpeaker:
+            return nil
+        case .trainBaseSensor:
+            return nil
+        case .trainBaseSpeedometer:
+            return nil
         }
     }
 }
@@ -89,6 +101,14 @@ extension IOType: CustomStringConvertible {
             return "Built-in Motor"
         case .builtInTiltSensor:
             return "Built-in Tilt Sensor"
+        case .trainBaseMotor:
+            return "Duplo Train Base Motor"
+        case .trainBaseSpeaker:
+            return "Duplo Train Base Speaker"
+        case .trainBaseSensor:
+            return "Duplo Train Base Sensor"
+        case .trainBaseSpeedometer:
+            return "Duplo Train Base Speedometer"
         }
     }
 }
