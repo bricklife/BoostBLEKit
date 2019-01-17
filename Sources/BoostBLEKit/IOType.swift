@@ -64,9 +64,9 @@ extension IOType {
         case .trainBaseSpeaker:
             return nil
         case .trainBaseSensor:
-            return nil
+            return 0 // 0: Color, 1: ??
         case .trainBaseSpeedometer:
-            return nil
+            return 0 // 0: Speed
         }
     }
 }
