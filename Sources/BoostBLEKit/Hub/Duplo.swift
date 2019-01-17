@@ -18,7 +18,7 @@ public final class Duplo {
             0x00: .trainBaseMotor,
             0x01: .trainBaseSpeaker,
             0x11: .rgbLight,
-            0x12: .trainBaseSensor,
+            0x12: .trainBaseColorSensor,
             0x13: .trainBaseSpeedometer,
             0x14: .voltageSensor,
             ]

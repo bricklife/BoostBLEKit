@@ -25,7 +25,7 @@ public enum IOType: UInt8 {
     case builtInTiltSensor      = 0x28
     case trainBaseMotor         = 0x29
     case trainBaseSpeaker       = 0x2a
-    case trainBaseSensor        = 0x2b
+    case trainBaseColorSensor   = 0x2b
     case trainBaseSpeedometer   = 0x2c
 }
 
@@ -63,7 +63,7 @@ extension IOType {
             return nil
         case .trainBaseSpeaker:
             return nil
-        case .trainBaseSensor:
+        case .trainBaseColorSensor:
             return 0 // 0: Color, 1: ??
         case .trainBaseSpeedometer:
             return 0 // 0: Speed
@@ -105,8 +105,8 @@ extension IOType: CustomStringConvertible {
             return "Duplo Train Base Motor"
         case .trainBaseSpeaker:
             return "Duplo Train Base Speaker"
-        case .trainBaseSensor:
-            return "Duplo Train Base Sensor"
+        case .trainBaseColorSensor:
+            return "Duplo Train Base Color Sensor"
         case .trainBaseSpeedometer:
             return "Duplo Train Base Speedometer"
         }
