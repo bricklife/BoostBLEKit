@@ -66,7 +66,7 @@ extension IOType {
         case .trainBaseColorSensor:
             return 1 // 0: Realtime, 1: Detect
         case .trainBaseSpeedometer:
-            return 0 // 0: Speed
+            return 0 // 0: Speed, 1: Distance
         }
     }
 }
