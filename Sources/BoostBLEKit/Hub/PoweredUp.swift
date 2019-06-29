@@ -28,7 +28,7 @@ public final class PoweredUp {
         
         public func canSupportAsMotor(ioType: IOType) -> Bool {
             switch ioType {
-            case .mediumMotor, .trainMotor, .ledLight:
+            case .interactiveMotor, .mediumMotor, .trainMotor, .ledLight:
                 return true
             default:
                 return false
@@ -40,6 +40,8 @@ public final class PoweredUp {
             guard let ioType = connectedIOs[portId] else { return nil }
             
             switch ioType {
+            case .interactiveMotor:
+                return InteractiveMotorPowerCommand(portId: portId, power: power)
             case .mediumMotor, .trainMotor, .ledLight:
                 return MotorPowerCommand(portId: portId, power: power)
             default:
