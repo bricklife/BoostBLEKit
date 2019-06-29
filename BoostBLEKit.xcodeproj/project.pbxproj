@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		"BoostBLEKit::BoostBLEKit::Product" /* BoostBLEKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BoostBLEKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"BoostBLEKit::BoostBLEKitTests::Product" /* BoostBLEKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = BoostBLEKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"BoostBLEKit::BoostBLEKitTests::Product" /* BoostBLEKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = BoostBLEKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0B5ADB21023717008DEC1B /* Boost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boost.swift; sourceTree = "<group>"; };
 		CB0B5ADE21023789008DEC1B /* InteractiveMotorPowerCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveMotorPowerCommand.swift; sourceTree = "<group>"; };
 		CB434598200FA72100D82D7D /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -208,6 +208,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
@@ -276,7 +277,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = BoostBLEKitTests;
 			};
 			name = Debug;
@@ -294,7 +294,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = BoostBLEKitTests;
 			};
 			name = Release;
@@ -318,6 +317,7 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				USE_HEADERMAP = NO;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
@@ -341,7 +341,6 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = BoostBLEKit;
 			};
 			name = Debug;
@@ -363,7 +362,6 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGET_NAME = BoostBLEKit;
 			};
 			name = Release;
@@ -385,6 +383,7 @@
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				USE_HEADERMAP = NO;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;

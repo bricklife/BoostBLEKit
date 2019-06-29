@@ -15,6 +15,6 @@ public struct MotorPowerCommand: Command {
     
     public var data: Data {
         let power = UInt8(bitPattern: self.power)
-        return Data(bytes: [0x08, 0x00, 0x81, portId, 0x11, 0x51, 0x00, power])
+        return Data([0x08, 0x00, 0x81, portId, 0x11, 0x51, 0x00, power])
     }
 }
