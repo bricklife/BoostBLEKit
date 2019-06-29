@@ -10,6 +10,7 @@ import Foundation
 
 public enum Notification {
     
+    case hubProperty(HubProperty, HubProperty.Value)
     case connected(PortId, IOType)
     case disconnected(PortId)
     case sensorValue(PortId, Data)
@@ -21,6 +22,12 @@ extension Notification {
         guard data.count >= 3 else { return nil }
         
         switch data[2] {
+        case 0x01: // Hub Property
+            guard data.count >= 6 else { return nil }
+            guard let hubProperty = HubProperty(rawValue: data[3]) else { return nil }
+            guard let value = hubProperty.value(from: Data(data.suffix(from: 5))) else { return nil }
+            self = .hubProperty(hubProperty, value)
+
         case 0x04: // Port Information
             guard data.count >= 5 else { return nil }
             let portId = data[3]
@@ -52,6 +59,8 @@ extension Notification: CustomStringConvertible {
     
     public var description: String {
         switch self {
+        case .hubProperty(let hubProperty, let value):
+            return "\(hubProperty): \(value)"
         case .connected(let portId, let ioType):
             return "Connected \(ioType) into Port \(portId.hexString)"
         case .disconnected(let portId):
