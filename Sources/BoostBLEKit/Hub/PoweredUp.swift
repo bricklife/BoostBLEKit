@@ -18,13 +18,13 @@ public final class PoweredUp {
             0x32: .rgbLight,
             0x3b: .currentSensor,
             0x3c: .voltageSensor,
-            ]
+        ]
         
         public let portMap: [Port: PortId] = [
             .A:     0x00,
             .B:     0x01,
             .AB:    0x39,
-            ]
+        ]
         
         public func canSupportAsMotor(ioType: IOType) -> Bool {
             switch ioType {

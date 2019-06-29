@@ -21,11 +21,11 @@ public final class Duplo {
             0x12: .trainBaseColorSensor,
             0x13: .trainBaseSpeedometer,
             0x14: .voltageSensor,
-            ]
+        ]
         
         public let portMap: [Port: PortId] = [
             .A:     0x00,
-            ]
+        ]
         
         public func canSupportAsMotor(ioType: IOType) -> Bool {
             switch ioType {

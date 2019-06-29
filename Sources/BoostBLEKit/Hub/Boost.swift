@@ -68,7 +68,7 @@ public final class Boost {
             0x3a: .tiltSensor,
             0x3b: .currentSensor,
             0x3c: .voltageSensor,
-            ]
+        ]
         
         public let portMap: [Port: PortId] = [
             .A:     0x37,
@@ -76,7 +76,7 @@ public final class Boost {
             .C:     0x01,
             .D:     0x02,
             .AB:    0x39,
-            ]
+        ]
         
         public func canSupportAsMotor(ioType: IOType) -> Bool {
             switch ioType {
