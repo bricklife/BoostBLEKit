@@ -1,8 +1,8 @@
 //
 //  Hub.swift
-//  BoostBLEKitTests
+//  BoostBLEKit
 //
-//  Created by ooba on 13/07/2018.
+//  Created by Shinichiro Oba on 13/07/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 

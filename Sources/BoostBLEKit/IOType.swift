@@ -2,7 +2,7 @@
 //  IOType.swift
 //  BoostBLEKit
 //
-//  Created by ooba on 17/01/2018.
+//  Created by Shinichiro Oba on 17/01/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 

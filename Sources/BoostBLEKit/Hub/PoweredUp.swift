@@ -2,7 +2,7 @@
 //  PoweredUp.swift
 //  BoostBLEKit
 //
-//  Created by ooba on 20/07/2018.
+//  Created by Shinichiro Oba on 20/07/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 

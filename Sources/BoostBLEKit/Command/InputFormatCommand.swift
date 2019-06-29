@@ -2,7 +2,7 @@
 //  InputFormatCommand.swift
 //  BoostBLEKit
 //
-//  Created by ooba on 10/09/2018.
+//  Created by Shinichiro Oba on 10/09/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 

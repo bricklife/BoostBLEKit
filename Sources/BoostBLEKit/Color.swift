@@ -2,7 +2,7 @@
 //  Color.swift
 //  BoostBLEKit
 //
-//  Created by ooba on 07/08/2018.
+//  Created by Shinichiro Oba on 07/08/2018.
 //  Copyright © 2018 bricklife.com. All rights reserved.
 //
 
