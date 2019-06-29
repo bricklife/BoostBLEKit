@@ -17,7 +17,7 @@ public enum HubType {
 
 public extension HubType {
     
-    public init?(manufacturerData: Data) {
+    init?(manufacturerData: Data) {
         guard manufacturerData.count > 3 else { return nil }
         
         switch manufacturerData[3] {
