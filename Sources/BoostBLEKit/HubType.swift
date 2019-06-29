@@ -11,6 +11,7 @@ import Foundation
 public enum HubType {
     
     case boost
+    case boostV1
     case poweredUp
     case duploTrain
 }
@@ -22,7 +23,11 @@ public extension HubType {
         
         switch manufacturerData[3] {
         case 0x40:
-            self = .boost
+            if manufacturerData[6] & 0x02 > 0 {
+                self = .boost
+            } else {
+                self = .boostV1
+            }
         case 0x41:
             self = .poweredUp
         case 0x20:
@@ -39,6 +44,8 @@ extension HubType: CustomStringConvertible {
         switch self {
         case .boost:
             return "Boost Move Hub"
+        case .boostV1:
+            return "Boost Move Hub (F/W 1.x)"
         case .poweredUp:
             return "Powered Up Smart Hub"
         case .duploTrain:
