@@ -86,8 +86,8 @@
 				CB434598200FA72100D82D7D /* Command.swift */,
 				CB26245B22C7D6D10034E54F /* HubPropertiesCommand.swift */,
 				CBF7D4392146E8F8000B8B60 /* InputFormatCommand.swift */,
-				CB0B5ADE21023789008DEC1B /* MotorStartSpeedCommand.swift */,
 				CB43459A200FA7C400D82D7D /* MotorStartPowerCommand.swift */,
+				CB0B5ADE21023789008DEC1B /* MotorStartSpeedCommand.swift */,
 				CB7CEAD120EFA5AD001291D7 /* RGBLightColorCommand.swift */,
 			);
 			path = Command;

@@ -11,7 +11,7 @@ import Foundation
 public struct MotorStartSpeedCommand: Command {
     
     public let portId: PortId
-    public let speed: Int8
+    public let speed: Int8 // 0: HOLD
     public let maxPower: UInt8
     
     public init(portId: PortId, speed: Int8, maxPower: UInt8 = 0x64) {
