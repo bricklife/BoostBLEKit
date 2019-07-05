@@ -40,20 +40,6 @@ public final class Boost {
                 return false
             }
         }
-        
-        public func motorPowerCommand(port: Port, power: Int8) -> Command? {
-            guard let portId = portId(for: port) else { return nil }
-            guard let ioType = connectedIOs[portId] else { return nil }
-            
-            switch ioType {
-            case .interactiveMotor, .builtInMotor:
-                return InteractiveMotorPowerCommand(portId: portId, power: power)
-            case .mediumMotor, .trainMotor, .ledLight:
-                return MotorPowerCommand(portId: portId, power: power)
-            default:
-                return nil
-            }
-        }
     }
     
     public final class MoveHubV1: Hub {
@@ -84,20 +70,6 @@ public final class Boost {
                 return true
             default:
                 return false
-            }
-        }
-        
-        public func motorPowerCommand(port: Port, power: Int8) -> Command? {
-            guard let portId = portId(for: port) else { return nil }
-            guard let ioType = connectedIOs[portId] else { return nil }
-            
-            switch ioType {
-            case .interactiveMotor, .builtInMotor:
-                return InteractiveMotorPowerCommand(portId: portId, power: power)
-            case .mediumMotor, .trainMotor, .ledLight:
-                return MotorPowerCommand(portId: portId, power: power)
-            default:
-                return nil
             }
         }
     }

@@ -14,6 +14,12 @@ public struct InputFormatCommand: Command {
     public let mode: UInt8
     public let subscribe: Bool
     
+    public init(portId: PortId, mode: UInt8, subscribe: Bool) {
+        self.portId = portId
+        self.mode = mode
+        self.subscribe = subscribe
+    }
+    
     public var data: Data {
         return Data([0x0a, 0x00, 0x41, portId, mode, 0x01, 0x00, 0x00, 0x00, subscribe ? 0x01 : 0x00])
     }
