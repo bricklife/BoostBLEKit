@@ -18,7 +18,7 @@ public protocol Hub {
     
     func canSupportAsMotor(ioType: IOType) -> Bool
     
-    func motorPowerCommand(port: Port, power: Int8) -> Command?
+    func motorStartPowerCommand(port: Port, power: Int8) -> Command?
     func rgbLightColorCommand(color: Color) -> Command?
     
     func subscribeCommand(portId: PortId) -> Command?
@@ -33,6 +33,14 @@ public extension Hub {
     
     func portId(for port: Port) -> PortId? {
         return portMap[port]
+    }
+    
+    func motorStartPowerCommand(port: Port, power: Int8) -> Command? {
+        guard let portId = portId(for: port) else { return nil }
+        guard let ioType = connectedIOs[portId] else { return nil }
+        guard canSupportAsMotor(ioType: ioType) else { return nil }
+        
+        return MotorStartPowerCommand(portId: portId, power: power)
     }
     
     func rgbLightColorCommand(color: Color) -> Command? {

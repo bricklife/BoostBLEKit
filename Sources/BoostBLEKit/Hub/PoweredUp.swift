@@ -34,19 +34,5 @@ public final class PoweredUp {
                 return false
             }
         }
-        
-        public func motorPowerCommand(port: Port, power: Int8) -> Command? {
-            guard let portId = portId(for: port) else { return nil }
-            guard let ioType = connectedIOs[portId] else { return nil }
-            
-            switch ioType {
-            case .interactiveMotor:
-                return InteractiveMotorPowerCommand(portId: portId, power: power)
-            case .mediumMotor, .trainMotor, .ledLight:
-                return MotorPowerCommand(portId: portId, power: power)
-            default:
-                return nil
-            }
-        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  MotorPowerCommand.swift
+//  MotorStartPowerCommand.swift
 //  BoostBLEKit
 //
 //  Created by Shinichiro Oba on 17/01/2018.
@@ -8,10 +8,15 @@
 
 import Foundation
 
-public struct MotorPowerCommand: Command {
+public struct MotorStartPowerCommand: Command {
     
     public let portId: PortId
     public let power: Int8
+    
+    public init(portId: PortId, power: Int8) {
+        self.portId = portId
+        self.power = power
+    }
     
     public var data: Data {
         let power = UInt8(bitPattern: self.power)
