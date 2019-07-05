@@ -28,7 +28,7 @@ public enum HubProperty: UInt8 {
                 return "\(integer)"
             }
         }
-
+        
         public var intValue: Int? {
             switch self {
             case .string:
@@ -44,7 +44,7 @@ public enum HubProperty: UInt8 {
         case .advertisingName:
             guard let string = String(data: data, encoding: .utf8) else { return nil }
             return .string(string)
-
+            
         case .firmwareVersion:
             guard data.count == 4 else { return nil }
             var version = data.reversed().map { String(format: "%02x", $0) }.joined(separator: "")
@@ -52,7 +52,7 @@ public enum HubProperty: UInt8 {
             version.insert(".", at: version.index(version.startIndex, offsetBy: 3))
             version.insert(".", at: version.index(version.startIndex, offsetBy: 6))
             return .string(version)
-
+            
         case .button, .batteryVoltage:
             guard data.count > 0 else { return nil }
             return .integer(Int(data[0]))
