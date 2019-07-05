@@ -11,8 +11,9 @@ import Foundation
 public struct MotorStartPowerCommand: Command {
     
     public let portId: PortId
-    public let power: Int8 // 0: FLOAT, 127: BRAKE
+    public let power: Int8
     
+    /// power: 0 = FLOAT, 127 = BRAKE
     public init(portId: PortId, power: Int8) {
         self.portId = portId
         self.power = power
