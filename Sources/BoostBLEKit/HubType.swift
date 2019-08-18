@@ -46,9 +46,9 @@ extension HubType: CustomStringConvertible {
     public var description: String {
         switch self {
         case .boost:
-            return "Boost Move Hub"
+            return "BOOST Move Hub"
         case .boostV1:
-            return "Boost Move Hub (F/W 1.x)"
+            return "BOOST Move Hub (F/W 1.x)"
         case .poweredUp:
             return "Powered Up Smart Hub"
         case .duploTrain:
