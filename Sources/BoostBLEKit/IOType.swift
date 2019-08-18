@@ -31,6 +31,15 @@ public enum IOType: UInt8 {
 
 extension IOType {
     
+    public var canSupportMotorStartPowerCommand: Bool {
+        switch self {
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor:
+            return true
+        default:
+            return false
+        }
+    }
+    
     public var defaultSensorMode: UInt8? {
         switch self {
         case .mediumMotor:

@@ -25,14 +25,5 @@ public final class PoweredUp {
             .B:     0x01,
             .AB:    0x39,
         ]
-        
-        public func canSupportAsMotor(ioType: IOType) -> Bool {
-            switch ioType {
-            case .interactiveMotor, .mediumMotor, .trainMotor, .ledLight:
-                return true
-            default:
-                return false
-            }
-        }
     }
 }

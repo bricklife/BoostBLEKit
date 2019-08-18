@@ -31,15 +31,6 @@ public final class Boost {
             .D:     0x03,
             .AB:    0x10,
         ]
-        
-        public func canSupportAsMotor(ioType: IOType) -> Bool {
-            switch ioType {
-            case .interactiveMotor, .builtInMotor, .mediumMotor, .trainMotor, .ledLight:
-                return true
-            default:
-                return false
-            }
-        }
     }
     
     public final class MoveHubV1: Hub {
@@ -63,14 +54,5 @@ public final class Boost {
             .D:     0x02,
             .AB:    0x39,
         ]
-        
-        public func canSupportAsMotor(ioType: IOType) -> Bool {
-            switch ioType {
-            case .interactiveMotor, .builtInMotor, .mediumMotor, .trainMotor, .ledLight:
-                return true
-            default:
-                return false
-            }
-        }
     }
 }

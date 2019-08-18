@@ -16,6 +16,7 @@ public protocol Hub {
     func port(for portId: PortId) -> Port?
     func portId(for port: Port) -> PortId?
     
+    @available(*, deprecated, message: "Use `IOType.canSupportMotorStartPowerCommand` instead")
     func canSupportAsMotor(ioType: IOType) -> Bool
     
     func motorStartPowerCommand(port: Port, power: Int8) -> Command?
@@ -35,10 +36,14 @@ public extension Hub {
         return portMap[port]
     }
     
+    func canSupportAsMotor(ioType: IOType) -> Bool {
+        return ioType.canSupportMotorStartPowerCommand
+    }
+    
     func motorStartPowerCommand(port: Port, power: Int8) -> Command? {
         guard let portId = portId(for: port) else { return nil }
         guard let ioType = connectedIOs[portId] else { return nil }
-        guard canSupportAsMotor(ioType: ioType) else { return nil }
+        guard ioType.canSupportMotorStartPowerCommand else { return nil }
         
         return MotorStartPowerCommand(portId: portId, power: power)
     }

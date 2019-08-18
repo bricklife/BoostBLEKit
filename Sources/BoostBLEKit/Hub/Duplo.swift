@@ -26,14 +26,5 @@ public final class Duplo {
         public let portMap: [Port: PortId] = [
             .A:     0x00,
         ]
-        
-        public func canSupportAsMotor(ioType: IOType) -> Bool {
-            switch ioType {
-            case .trainBaseMotor:
-                return true
-            default:
-                return false
-            }
-        }
     }
 }
