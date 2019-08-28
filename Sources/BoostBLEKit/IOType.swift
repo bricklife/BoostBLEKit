@@ -29,6 +29,8 @@ public enum IOType: UInt8 {
     case trainBaseSpeedometer   = 0x2c
     case largeMotor             = 0x2e
     case extraLargeMotor        = 0x2f
+    case powerControlButton     = 0x37
+    case unknownType0x38        = 0x38
 }
 
 extension IOType {
@@ -82,6 +84,10 @@ extension IOType {
             return nil
         case .extraLargeMotor:
             return nil
+        case .powerControlButton:
+            return nil
+        case .unknownType0x38:
+            return nil
         }
     }
 }
@@ -128,6 +134,10 @@ extension IOType: CustomStringConvertible {
             return "L Motor"
         case .extraLargeMotor:
             return "XL Motor"
+        case .powerControlButton:
+            return "Power Control Button"
+        case .unknownType0x38:
+            return "Unknown IO Type (0x38)"
         }
     }
 }
