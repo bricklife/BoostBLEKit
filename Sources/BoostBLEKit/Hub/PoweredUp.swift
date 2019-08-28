@@ -26,4 +26,16 @@ public final class PoweredUp {
             .AB:    0x39,
         ]
     }
+    
+    public final class RemoteControl: Hub {
+        
+        public init() {}
+        
+        public var connectedIOs: [PortId : IOType] = [
+            0x34: .rgbLight,
+            0x3b: .voltageSensor,
+        ]
+        
+        public let portMap: [Port: PortId] = [:]
+    }
 }
