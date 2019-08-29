@@ -14,7 +14,17 @@ public final class ControlPlus {
         
         public init() {}
         
-        public var connectedIOs: [PortId : IOType] = [:]
+        public var connectedIOs: [PortId : IOType] = [
+            0x32: .rgbLight,
+            0x3b: .currentSensor,
+            0x3c: .voltageSensor,
+            // 0x3d: 0x3c,
+            // 0x60: 0x3c,
+            // 0x61: 0x39,
+            // 0x62: 0x3a,
+            // 0x63: 0x3b,
+            // 0x64: 0x36,
+        ]
         
         public let portMap: [Port: PortId] = [
             .A:     0x00,
