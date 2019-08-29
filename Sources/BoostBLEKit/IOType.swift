@@ -37,7 +37,7 @@ extension IOType {
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
-        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor:
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor:
             return true
         default:
             return false
