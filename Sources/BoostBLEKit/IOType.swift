@@ -81,9 +81,9 @@ extension IOType {
         case .trainBaseSpeedometer:
             return 0 // 0: Speed, 1: Distance
         case .largeMotor:
-            return nil
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .extraLargeMotor:
-            return nil
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .powerControlButton:
             return nil
         case .unknownType0x38:
