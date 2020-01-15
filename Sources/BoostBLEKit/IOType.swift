@@ -29,15 +29,20 @@ public enum IOType: UInt8 {
     case trainBaseSpeedometer   = 0x2c
     case largeMotor             = 0x2e
     case extraLargeMotor        = 0x2f
+    case mediumAngularMotor     = 0x30
+    case largeAngularMotor      = 0x31
     case powerControlButton     = 0x37
     case unknownType0x38        = 0x38
+    case colorSensor            = 0x3d
+    case distanceSensor         = 0x3e
+    case forceSensor            = 0x3f
 }
 
 extension IOType {
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
-        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor:
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor:
             return true
         default:
             return false
@@ -84,10 +89,20 @@ extension IOType {
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .extraLargeMotor:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
+        case .mediumAngularMotor:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
+        case .largeAngularMotor:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .powerControlButton:
             return nil
         case .unknownType0x38:
             return nil
+        case .colorSensor:
+            return 0 // 0: Color
+        case .distanceSensor:
+            return 0 // 0: Distance (mm)
+        case .forceSensor:
+            return 0 // 0: Pressure (%)
         }
     }
 }
@@ -134,10 +149,20 @@ extension IOType: CustomStringConvertible {
             return "L Motor"
         case .extraLargeMotor:
             return "XL Motor"
+        case .mediumAngularMotor:
+            return "Medium Angular Motor"
+        case .largeAngularMotor:
+            return "Large Angular Motor"
         case .powerControlButton:
             return "Power Control Button"
         case .unknownType0x38:
             return "Unknown IO Type (0x38)"
+        case .colorSensor:
+            return "Color Sensor"
+        case .distanceSensor:
+            return "Distance Sensor"
+        case .forceSensor:
+            return "Force Sensor"
         }
     }
 }
