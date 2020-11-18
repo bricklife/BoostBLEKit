@@ -36,13 +36,15 @@ public enum IOType: UInt8 {
     case colorSensor            = 0x3d
     case distanceSensor         = 0x3e
     case forceSensor            = 0x3f
+    case mediumAngularMotorGray = 0x4b
+    case largeAngularMotorGray  = 0x4c
 }
 
 extension IOType {
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
-        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor:
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor, .mediumAngularMotorGray, .largeAngularMotorGray:
             return true
         default:
             return false
@@ -103,6 +105,10 @@ extension IOType {
             return 0 // 0: Distance (mm)
         case .forceSensor:
             return 0 // 0: Pressure (%)
+        case .mediumAngularMotorGray:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
+        case .largeAngularMotorGray:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         }
     }
 }
@@ -163,6 +169,10 @@ extension IOType: CustomStringConvertible {
             return "Distance Sensor"
         case .forceSensor:
             return "Force Sensor"
+        case .mediumAngularMotorGray:
+            return "Medium Angular Motor (Gray)"
+        case .largeAngularMotorGray:
+            return "Large Angular Motor (Gray)"
         }
     }
 }
