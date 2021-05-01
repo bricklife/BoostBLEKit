@@ -14,6 +14,7 @@ public enum HubType {
     case boostV1
     case poweredUp
     case remoteControl
+    case mario
     case duploTrain
     case controlPlus
 }
@@ -34,6 +35,8 @@ public extension HubType {
             self = .poweredUp
         case 0x42:
             self = .remoteControl
+        case 0x43:
+            self = .mario
         case 0x20:
             self = .duploTrain
         case 0x80:
@@ -56,6 +59,8 @@ extension HubType: CustomStringConvertible {
             return "Powered Up Smart Hub"
         case .remoteControl:
             return "Powered Up Remote Control"
+        case .mario:
+            return "Mario"
         case .duploTrain:
             return "Duplo Train Base"
         case .controlPlus:
