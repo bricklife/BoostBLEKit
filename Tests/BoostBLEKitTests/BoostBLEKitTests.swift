@@ -33,10 +33,4 @@ class BoostBLEKitTests: XCTestCase {
             Data([0x05, 0x00, 0x04, 0x02, 0x00])
         ))
     }
-    
-    static var allTests = [
-        ("testMotorStartSpeedCommand", testMotorStartSpeedCommand),
-        ("testMotorStartPowerCommand", testMotorStartPowerCommand),
-        ("testNotification", testNotification),
-    ]
 }
