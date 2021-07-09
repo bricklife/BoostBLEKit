@@ -10,33 +10,33 @@ import Foundation
 
 public enum IOType: Equatable {
     
-    case mediumMotor
-    case trainMotor
-    case ledLight
-    case voltageSensor
-    case currentSensor
-    case piezoSpeaker
-    case rgbLight
-    case tiltSensor
-    case motionSensor
-    case colorAndDistanceSensor
-    case interactiveMotor
-    case builtInMotor
-    case builtInTiltSensor
-    case trainBaseMotor
-    case trainBaseSpeaker
-    case trainBaseColorSensor
-    case trainBaseSpeedometer
-    case largeMotor
-    case extraLargeMotor
-    case mediumAngularMotor
-    case largeAngularMotor
-    case powerControlButton
-    case colorSensor
-    case distanceSensor
-    case forceSensor
-    case mediumAngularMotorGray
-    case largeAngularMotorGray
+    case mediumMotor            // 0x01 (1)
+    case trainMotor             // 0x02 (2)
+    case ledLight               // 0x08 (8)
+    case voltageSensor          // 0x14 (20)
+    case currentSensor          // 0x15 (21)
+    case piezoSpeaker           // 0x16 (22)
+    case rgbLight               // 0x17 (23)
+    case tiltSensor             // 0x22 (34)
+    case motionSensor           // 0x23 (35)
+    case colorAndDistanceSensor // 0x25 (37)
+    case interactiveMotor       // 0x26 (38)
+    case builtInMotor           // 0x27 (39)
+    case builtInTiltSensor      // 0x28 (40)
+    case trainBaseMotor         // 0x29 (41)
+    case trainBaseSpeaker       // 0x2a (42)
+    case trainBaseColorSensor   // 0x2b (43)
+    case trainBaseSpeedometer   // 0x2c (44)
+    case largeMotor             // 0x2e (46)
+    case extraLargeMotor        // 0x2f (47)
+    case mediumAngularMotor     // 0x30 (48)
+    case largeAngularMotor      // 0x31 (49)
+    case powerControlButton     // 0x37 (55)
+    case colorSensor            // 0x3d (61)
+    case distanceSensor         // 0x3e (62)
+    case forceSensor            // 0x3f (63)
+    case mediumAngularMotorGray // 0x4b (75)
+    case largeAngularMotorGray  // 0x4c (76)
     case unknown(UInt8)
 }
 
