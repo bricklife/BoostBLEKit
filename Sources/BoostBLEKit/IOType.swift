@@ -8,39 +8,100 @@
 
 import Foundation
 
-public enum IOType: UInt8 {
+public enum IOType: Equatable {
     
-    case mediumMotor            = 0x01
-    case trainMotor             = 0x02
-    case ledLight               = 0x08
-    case voltageSensor          = 0x14
-    case currentSensor          = 0x15
-    case piezoSpeaker           = 0x16
-    case rgbLight               = 0x17
-    case tiltSensor             = 0x22
-    case motionSensor           = 0x23
-    case colorAndDistanceSensor = 0x25
-    case interactiveMotor       = 0x26
-    case builtInMotor           = 0x27
-    case builtInTiltSensor      = 0x28
-    case trainBaseMotor         = 0x29
-    case trainBaseSpeaker       = 0x2a
-    case trainBaseColorSensor   = 0x2b
-    case trainBaseSpeedometer   = 0x2c
-    case largeMotor             = 0x2e
-    case extraLargeMotor        = 0x2f
-    case mediumAngularMotor     = 0x30
-    case largeAngularMotor      = 0x31
-    case powerControlButton     = 0x37
-    case unknownType0x38        = 0x38
-    case colorSensor            = 0x3d
-    case distanceSensor         = 0x3e
-    case forceSensor            = 0x3f
-    case mediumAngularMotorGray = 0x4b
-    case largeAngularMotorGray  = 0x4c
+    case mediumMotor
+    case trainMotor
+    case ledLight
+    case voltageSensor
+    case currentSensor
+    case piezoSpeaker
+    case rgbLight
+    case tiltSensor
+    case motionSensor
+    case colorAndDistanceSensor
+    case interactiveMotor
+    case builtInMotor
+    case builtInTiltSensor
+    case trainBaseMotor
+    case trainBaseSpeaker
+    case trainBaseColorSensor
+    case trainBaseSpeedometer
+    case largeMotor
+    case extraLargeMotor
+    case mediumAngularMotor
+    case largeAngularMotor
+    case powerControlButton
+    case colorSensor
+    case distanceSensor
+    case forceSensor
+    case mediumAngularMotorGray
+    case largeAngularMotorGray
+    case unknown(UInt8)
 }
 
 extension IOType {
+    
+    init(rawValue: UInt8) {
+        switch rawValue {
+        case 0x01:
+            self = .mediumMotor
+        case 0x02:
+            self = .trainMotor
+        case 0x08:
+            self = .ledLight
+        case 0x14:
+            self = .voltageSensor
+        case 0x15:
+            self = .currentSensor
+        case 0x16:
+            self = .piezoSpeaker
+        case 0x17:
+            self = .rgbLight
+        case 0x22:
+            self = .tiltSensor
+        case 0x23:
+            self = .motionSensor
+        case 0x25:
+            self = .colorAndDistanceSensor
+        case 0x26:
+            self = .interactiveMotor
+        case 0x27:
+            self = .builtInMotor
+        case 0x28:
+            self = .builtInTiltSensor
+        case 0x29:
+            self = .trainBaseMotor
+        case 0x2a:
+            self = .trainBaseSpeaker
+        case 0x2b:
+            self = .trainBaseColorSensor
+        case 0x2c:
+            self = .trainBaseSpeedometer
+        case 0x2e:
+            self = .largeMotor
+        case 0x2f:
+            self = .extraLargeMotor
+        case 0x30:
+            self = .mediumAngularMotor
+        case 0x31:
+            self = .largeAngularMotor
+        case 0x37:
+            self = .powerControlButton
+        case 0x3d:
+            self = .colorSensor
+        case 0x3e:
+            self = .distanceSensor
+        case 0x3f:
+            self = .forceSensor
+        case 0x4b:
+            self = .mediumAngularMotorGray
+        case 0x4c:
+            self = .largeAngularMotorGray
+        default:
+            self = .unknown(rawValue)
+        }
+    }
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
@@ -97,8 +158,6 @@ extension IOType {
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .powerControlButton:
             return nil
-        case .unknownType0x38:
-            return nil
         case .colorSensor:
             return 0 // 0: Color
         case .distanceSensor:
@@ -109,6 +168,8 @@ extension IOType {
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .largeAngularMotorGray:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
+        case .unknown:
+            return nil
         }
     }
 }
@@ -161,8 +222,6 @@ extension IOType: CustomStringConvertible {
             return "Large Angular Motor"
         case .powerControlButton:
             return "Power Control Button"
-        case .unknownType0x38:
-            return "Unknown IO Type (0x38)"
         case .colorSensor:
             return "Color Sensor"
         case .distanceSensor:
@@ -173,6 +232,8 @@ extension IOType: CustomStringConvertible {
             return "Medium Angular Motor (Gray)"
         case .largeAngularMotorGray:
             return "Large Angular Motor (Gray)"
+        case .unknown(let ioType):
+            return String(format: "Unknown IO Type (0x%02x)", ioType)
         }
     }
 }

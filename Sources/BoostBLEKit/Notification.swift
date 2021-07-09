@@ -37,7 +37,7 @@ extension Notification {
                 self = .disconnected(portId)
             case 0x01, 0x02:
                 guard data.count >= 6 else { return nil }
-                guard let ioType = IOType(rawValue: data[5]) else { return nil }
+                let ioType = IOType(rawValue: data[5])
                 self = .connected(portId, ioType)
             default:
                 return nil
