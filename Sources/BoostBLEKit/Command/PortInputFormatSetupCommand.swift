@@ -1,5 +1,5 @@
 //
-//  InputFormatCommand.swift
+//  PortInputFormatSetupCommand.swift
 //  BoostBLEKit
 //
 //  Created by Shinichiro Oba on 10/09/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct InputFormatCommand: Command {
+public struct PortInputFormatSetupCommand: Command {
     
     public let portId: PortId
     public let mode: UInt8

@@ -57,12 +57,12 @@ public extension Hub {
     func subscribeCommand(portId: PortId) -> Command? {
         guard let mode = connectedIOs[portId]?.defaultSensorMode else { return nil }
         
-        return InputFormatCommand(portId: portId, mode: mode, subscribe: true)
+        return PortInputFormatSetupCommand(portId: portId, mode: mode, subscribe: true)
     }
     
     func unsubscribeCommand(portId: PortId) -> Command? {
         guard let mode = connectedIOs[portId]?.defaultSensorMode else { return nil }
         
-        return InputFormatCommand(portId: portId, mode: mode, subscribe: false)
+        return PortInputFormatSetupCommand(portId: portId, mode: mode, subscribe: false)
     }
 }
