@@ -25,7 +25,7 @@ public enum HubProperty: UInt8 {
             case .string(let string):
                 return string
             case .integer(let integer):
-                return "\(integer)"
+                return integer.description
             }
         }
         
