@@ -60,7 +60,6 @@ public enum HubProperty: UInt8 {
     }
 }
 
-
 extension HubProperty: CustomStringConvertible {
     
     public var description: String {
@@ -76,3 +75,16 @@ extension HubProperty: CustomStringConvertible {
         }
     }
 }
+
+extension HubProperty.Value: CustomStringConvertible {
+    
+    public var description: String {
+        switch self {
+        case .string(let string):
+            return string
+        case .integer(let integer):
+            return integer.description
+        }
+    }
+}
+
