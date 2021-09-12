@@ -35,6 +35,8 @@ public enum IOType: Equatable {
     case colorSensor            // 0x3d (61)
     case distanceSensor         // 0x3e (62)
     case forceSensor            // 0x3f (63)
+    case colorLightMatrix       // 0x40 (64)
+    case smallAngularMotor      // 0x41 (65)
     case mediumAngularMotorGray // 0x4b (75)
     case largeAngularMotorGray  // 0x4c (76)
     case unknown(UInt8)
@@ -94,6 +96,10 @@ extension IOType {
             self = .distanceSensor
         case 0x3f:
             self = .forceSensor
+        case 0x40:
+            self = .colorLightMatrix
+        case 0x41:
+            self = .smallAngularMotor
         case 0x4b:
             self = .mediumAngularMotorGray
         case 0x4c:
@@ -105,7 +111,7 @@ extension IOType {
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
-        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor, .mediumAngularMotorGray, .largeAngularMotorGray:
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor, .smallAngularMotor, .mediumAngularMotorGray, .largeAngularMotorGray:
             return true
         default:
             return false
@@ -164,6 +170,10 @@ extension IOType {
             return 0 // 0: Distance (mm)
         case .forceSensor:
             return 0 // 0: Pressure (%)
+        case .colorLightMatrix:
+            return 2 // 0: ?, 1: ?, 2: Matrix
+        case .smallAngularMotor:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .mediumAngularMotorGray:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .largeAngularMotorGray:
@@ -228,6 +238,10 @@ extension IOType: CustomStringConvertible {
             return "Distance Sensor"
         case .forceSensor:
             return "Force Sensor"
+        case .colorLightMatrix:
+            return "Color Light Matrix"
+        case .smallAngularMotor:
+            return "Small Angular Motor"
         case .mediumAngularMotorGray:
             return "Medium Angular Motor (Gray)"
         case .largeAngularMotorGray:
