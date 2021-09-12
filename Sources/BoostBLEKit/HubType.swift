@@ -18,6 +18,7 @@ public enum HubType {
     case luigi
     case duploTrain
     case controlPlus
+    case spikeEssential
 }
 
 public extension HubType {
@@ -44,6 +45,8 @@ public extension HubType {
             self = .duploTrain
         case 0x80:
             self = .controlPlus
+        case 0x83:
+            self = .spikeEssential
         default:
             return nil
         }
@@ -70,6 +73,8 @@ extension HubType: CustomStringConvertible {
             return "Duplo Train Base"
         case .controlPlus:
             return "CONTROL+ Smart Hub"
+        case .spikeEssential:
+            return "SPIKE Essential Hub"
         }
     }
 }
