@@ -35,6 +35,8 @@ public enum IOType: UInt8 {
     case colorSensor            = 0x3d
     case distanceSensor         = 0x3e
     case forceSensor            = 0x3f
+    case colorLightMatrix       = 0x40
+    case smallAngularMotor      = 0x41
     case mediumAngularMotorGray = 0x4b
     case largeAngularMotorGray  = 0x4c
 }
@@ -43,7 +45,7 @@ extension IOType {
     
     public var canSupportMotorStartPowerCommand: Bool {
         switch self {
-        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor, .mediumAngularMotorGray, .largeAngularMotorGray:
+        case .mediumMotor, .trainMotor, .ledLight, .interactiveMotor, .builtInMotor, .trainBaseMotor, .largeMotor, .extraLargeMotor, .mediumAngularMotor, .largeAngularMotor, .smallAngularMotor, .mediumAngularMotorGray, .largeAngularMotorGray:
             return true
         default:
             return false
@@ -102,6 +104,10 @@ extension IOType {
             return 0 // 0: Distance (mm)
         case .forceSensor:
             return 0 // 0: Pressure (%)
+        case .colorLightMatrix:
+            return 2 // 0: ?, 1: ?, 2: Matrix
+        case .smallAngularMotor:
+            return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .mediumAngularMotorGray:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .largeAngularMotorGray:
@@ -164,6 +170,10 @@ extension IOType: CustomStringConvertible {
             return "Distance Sensor"
         case .forceSensor:
             return "Force Sensor"
+        case .colorLightMatrix:
+            return "Color Light Matrix"
+        case .smallAngularMotor:
+            return "Small Angular Motor"
         case .mediumAngularMotorGray:
             return "Medium Angular Motor (Gray)"
         case .largeAngularMotorGray:
