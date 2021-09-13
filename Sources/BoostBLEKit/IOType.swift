@@ -32,7 +32,6 @@ public enum IOType: UInt8 {
     case mediumAngularMotor     = 0x30
     case largeAngularMotor      = 0x31
     case powerControlButton     = 0x37
-    case unknownType0x38        = 0x38
     case colorSensor            = 0x3d
     case distanceSensor         = 0x3e
     case forceSensor            = 0x3f
@@ -97,8 +96,6 @@ extension IOType {
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .powerControlButton:
             return nil
-        case .unknownType0x38:
-            return nil
         case .colorSensor:
             return 0 // 0: Color
         case .distanceSensor:
@@ -161,8 +158,6 @@ extension IOType: CustomStringConvertible {
             return "Large Angular Motor"
         case .powerControlButton:
             return "Power Control Button"
-        case .unknownType0x38:
-            return "Unknown IO Type (0x38)"
         case .colorSensor:
             return "Color Sensor"
         case .distanceSensor:
