@@ -25,7 +25,7 @@ extension Notification {
         case 0x01: // Hub Property
             guard data.count >= 6 else { return nil }
             guard let hubProperty = HubProperty(rawValue: data[3]) else { return nil }
-            guard let value = hubProperty.value(from: Data(data.suffix(from: 5))) else { return nil }
+            guard let value = hubProperty.value(from: data.advanced(by: 5)) else { return nil }
             self = .hubProperty(hubProperty, value)
             
         case 0x04: // Port Information
