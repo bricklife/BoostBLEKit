@@ -47,11 +47,12 @@ public enum HubProperty: UInt8 {
             
         case .firmwareVersion:
             guard data.count == 4 else { return nil }
-            var version = data.reversed().map { String(format: "%02x", $0) }.joined(separator: "")
-            version.insert(".", at: version.index(version.startIndex, offsetBy: 1))
-            version.insert(".", at: version.index(version.startIndex, offsetBy: 3))
-            version.insert(".", at: version.index(version.startIndex, offsetBy: 6))
-            return .string(version)
+            let version = data.withUnsafeBytes { $0.load(as: Int32.self).littleEndian }
+            let majorVersion = version >> 28 & 0x7
+            let minorVersion = version >> 24 & 0xf
+            let bugFixingNumber = version >> 16 & 0xff
+            let buildNumber = version & 0xffff
+            return .string(String(format: "%x.%x.%02x.%04x", majorVersion, minorVersion, bugFixingNumber, buildNumber))
             
         case .button, .batteryVoltage:
             guard data.count > 0 else { return nil }
