@@ -19,6 +19,7 @@ public enum HubProperty: UInt8 {
         
         case string(String)
         case integer(Int)
+        case versionNumber(VersionNumber)
         
         public var stringValue: String {
             switch self {
@@ -26,6 +27,8 @@ public enum HubProperty: UInt8 {
                 return string
             case .integer(let integer):
                 return integer.description
+            case .versionNumber(let versionNumber):
+                return versionNumber.description
             }
         }
         
@@ -35,6 +38,8 @@ public enum HubProperty: UInt8 {
                 return nil
             case .integer(let integer):
                 return integer
+            case .versionNumber:
+                return nil
             }
         }
     }
@@ -47,12 +52,7 @@ public enum HubProperty: UInt8 {
             
         case .firmwareVersion:
             guard data.count == 4 else { return nil }
-            let version = data.withUnsafeBytes { $0.load(as: Int32.self).littleEndian }
-            let majorVersion = version >> 28 & 0x7
-            let minorVersion = version >> 24 & 0xf
-            let bugFixingNumber = version >> 16 & 0xff
-            let buildNumber = version & 0xffff
-            return .string(String(format: "%x.%x.%02x.%04x", majorVersion, minorVersion, bugFixingNumber, buildNumber))
+            return .versionNumber(VersionNumber(data: data))
             
         case .button, .batteryVoltage:
             guard data.count > 0 else { return nil }
@@ -80,12 +80,6 @@ extension HubProperty: CustomStringConvertible {
 extension HubProperty.Value: CustomStringConvertible {
     
     public var description: String {
-        switch self {
-        case .string(let string):
-            return string
-        case .integer(let integer):
-            return integer.description
-        }
+        return stringValue
     }
 }
-
