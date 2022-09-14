@@ -27,4 +27,13 @@ public final class SuperMario {
         
         public let portMap: [Port: PortId] = [:]
     }
+    
+    public final class Peach: Hub {
+        
+        public init() {}
+        
+        public var connectedIOs: [PortId: IOType] = [:]
+        
+        public let portMap: [Port: PortId] = [:]
+    }
 }
