@@ -10,35 +10,38 @@ import Foundation
 
 public enum IOType: Equatable {
     
-    case mediumMotor            // 0x01 (1)
-    case trainMotor             // 0x02 (2)
-    case ledLight               // 0x08 (8)
-    case voltageSensor          // 0x14 (20)
-    case currentSensor          // 0x15 (21)
-    case piezoSpeaker           // 0x16 (22)
-    case rgbLight               // 0x17 (23)
-    case tiltSensor             // 0x22 (34)
-    case motionSensor           // 0x23 (35)
-    case colorAndDistanceSensor // 0x25 (37)
-    case interactiveMotor       // 0x26 (38)
-    case builtInMotor           // 0x27 (39)
-    case builtInTiltSensor      // 0x28 (40)
-    case trainBaseMotor         // 0x29 (41)
-    case trainBaseSpeaker       // 0x2a (42)
-    case trainBaseColorSensor   // 0x2b (43)
-    case trainBaseSpeedometer   // 0x2c (44)
-    case largeMotor             // 0x2e (46)
-    case extraLargeMotor        // 0x2f (47)
-    case mediumAngularMotor     // 0x30 (48)
-    case largeAngularMotor      // 0x31 (49)
-    case powerControlButton     // 0x37 (55)
-    case colorSensor            // 0x3d (61)
-    case distanceSensor         // 0x3e (62)
-    case forceSensor            // 0x3f (63)
-    case colorLightMatrix       // 0x40 (64)
-    case smallAngularMotor      // 0x41 (65)
-    case mediumAngularMotorGray // 0x4b (75)
-    case largeAngularMotorGray  // 0x4c (76)
+    case mediumMotor                // 0x01 (1)
+    case trainMotor                 // 0x02 (2)
+    case ledLight                   // 0x08 (8)
+    case voltageSensor              // 0x14 (20)
+    case currentSensor              // 0x15 (21)
+    case piezoSpeaker               // 0x16 (22)
+    case rgbLight                   // 0x17 (23)
+    case tiltSensor                 // 0x22 (34)
+    case motionSensor               // 0x23 (35)
+    case colorAndDistanceSensor     // 0x25 (37)
+    case interactiveMotor           // 0x26 (38)
+    case builtInMotor               // 0x27 (39)
+    case builtInTiltSensor          // 0x28 (40)
+    case trainBaseMotor             // 0x29 (41)
+    case trainBaseSpeaker           // 0x2a (42)
+    case trainBaseColorSensor       // 0x2b (43)
+    case trainBaseSpeedometer       // 0x2c (44)
+    case largeMotor                 // 0x2e (46)
+    case extraLargeMotor            // 0x2f (47)
+    case mediumAngularMotor         // 0x30 (48)
+    case largeAngularMotor          // 0x31 (49)
+    case powerControlButton         // 0x37 (55)
+    case colorSensor                // 0x3d (61)
+    case distanceSensor             // 0x3e (62)
+    case forceSensor                // 0x3f (63)
+    case colorLightMatrix           // 0x40 (64)
+    case smallAngularMotor          // 0x41 (65)
+    case marioAccelerometer         // 0x47 (71)
+    case marioColorBarcodeSensor    // 0x49 (73)
+    case marioPantsSensor           // 0x4a (74)
+    case mediumAngularMotorGray     // 0x4b (75)
+    case largeAngularMotorGray      // 0x4c (76)
     case unknown(UInt8)
 }
 
@@ -100,6 +103,12 @@ extension IOType {
             self = .colorLightMatrix
         case 0x41:
             self = .smallAngularMotor
+        case 0x47:
+            self = .marioAccelerometer
+        case 0x49:
+            self = .marioColorBarcodeSensor
+        case 0x4a:
+            self = .marioPantsSensor
         case 0x4b:
             self = .mediumAngularMotorGray
         case 0x4c:
@@ -174,6 +183,12 @@ extension IOType {
             return 2 // 0: ?, 1: ?, 2: Matrix
         case .smallAngularMotor:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
+        case .marioAccelerometer:
+            return nil
+        case .marioColorBarcodeSensor:
+            return 0 // 0: TAG, 1: RGB
+        case .marioPantsSensor:
+            return 0 // 0: PANT
         case .mediumAngularMotorGray:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .largeAngularMotorGray:
@@ -242,6 +257,12 @@ extension IOType: CustomStringConvertible {
             return "Color Light Matrix"
         case .smallAngularMotor:
             return "Small Angular Motor"
+        case .marioAccelerometer:
+            return "Mario Accelerometer"
+        case .marioColorBarcodeSensor:
+            return "Mario Color Barcode Sensor"
+        case .marioPantsSensor:
+            return "Mario Pants Sensor"
         case .mediumAngularMotorGray:
             return "Medium Angular Motor (Gray)"
         case .largeAngularMotorGray:
