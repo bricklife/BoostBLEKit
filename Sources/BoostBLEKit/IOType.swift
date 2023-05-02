@@ -184,7 +184,7 @@ extension IOType {
         case .smallAngularMotor:
             return 3 // 0: ??, 1: Speed, 2: Position, 3: Absolute Position
         case .marioAccelerometer:
-            return nil
+            return 0 // 0: Tilt (x, y, z)
         case .marioColorBarcodeSensor:
             return 0 // 0: TAG, 1: RGB
         case .marioPantsSensor:
